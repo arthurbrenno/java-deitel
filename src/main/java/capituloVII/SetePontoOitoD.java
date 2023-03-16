@@ -7,11 +7,10 @@ package capituloVII;
 import java.security.SecureRandom;
 import java.util.Arrays;
 
+
 public class SetePontoOitoD {
     private static final double[] w = new double[99];
     private static final SecureRandom random = new SecureRandom();
-    private static double[] menores = new double[3];
-    private static double[] maiores =  new double[3];
     
     public static void main(String[] args) {
         
@@ -32,6 +31,7 @@ public class SetePontoOitoD {
                 }
             }
         }
+        
         
         System.out.printf("Array: %s%n%n", Arrays.toString(w));
         
