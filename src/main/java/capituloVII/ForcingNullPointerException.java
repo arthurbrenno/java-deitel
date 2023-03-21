@@ -14,7 +14,7 @@ public class ForcingNullPointerException {
         myArray[9] = "1.667";
         double total = 0;
         for (String x : myArray) {
-            total+=Double.parseDouble(x);
+            total += Double.parseDouble(x);
         }
         System.out.println(total);
     }
