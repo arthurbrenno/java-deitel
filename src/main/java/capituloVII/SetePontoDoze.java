@@ -15,10 +15,12 @@ public class SetePontoDoze {
             System.out.print("Number>> ");
             int inputNumber = validadeUserInput();
             clear();
-            if (!arrayContains(inputNumber) && inputNumber != -1) {
-                array[i + 5] = inputNumber;
-            } 
             array[i] = inputNumber;
+        }
+        for (int i = 0; i < array.length; i++) {
+            if (isUnique(array[i]) && array[i] != -1) {
+                array[i+5] = array[i];
+            }
         }
         System.out.println(Arrays.toString(array));
         System.out.println("Números únicos:");
@@ -29,13 +31,17 @@ public class SetePontoDoze {
         }
     }
 
-    private static boolean arrayContains(int number) {
-        for (int i = 0; i < array.length - 6; i++) {
+    private static boolean isUnique(int number) {
+        int times = 0;
+        for (int i = 0; i < array.length; i++) {
             if (array[i] == number) {
-                return true;
+                times++;
+            }
+            if (times > 1) {
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
     private static int validadeUserInput() {
