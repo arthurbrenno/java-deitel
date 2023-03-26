@@ -5,8 +5,23 @@ import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 import java.security.SecureRandom;
-
+//por algum motivo, agora que estou revendo o código, eu criei um objeto da propria classe dentro da classe kkkkk
+//devia ter criado uma classe pro jogo, aqui ficou confuso kkkkk
 public class Craps {
+
+   // constantes que representam lançamentos comuns dos dados
+   private final static int SNAKE_EYES = 2;
+   private final static int TREY = 3;
+   private final static int SEVEN = 7;
+   private final static int YO_LEVEN = 11;
+   private final static int BOX_CARS = 12;
+   private double bankBalance = 1_000;
+   // enumeração com constantes que representam o status do jogo
+   private enum Status {
+      CONTINUE, WON, LOST
+   };
+
+   
 
    public static void main(String[] args) {
       clearConsole();
@@ -59,19 +74,9 @@ public class Craps {
    // cria um gerador de números aleatórios para uso no método rollDice
    private SecureRandom randomNumbers = new SecureRandom();
 
-   // enumeração com constantes que representam o status do jogo
-   private enum Status {
-      CONTINUE, WON, LOST
-   };
+   
 
-   private double bankBalance = 1_000;
-
-   // constantes que representam lançamentos comuns dos dados
-   private final static int SNAKE_EYES = 2;
-   private final static int TREY = 3;
-   private final static int SEVEN = 7;
-   private final static int YO_LEVEN = 11;
-   private final static int BOX_CARS = 12;
+   
 
    // joga uma partida de craps
    public Status play() {
