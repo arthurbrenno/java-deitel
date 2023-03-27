@@ -1,7 +1,6 @@
 package capituloVII;
 
 import java.util.Random;
-import java.security.SecureRandom;
 
 public class RolagemDados {
     private static Random random = new Random();

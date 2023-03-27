@@ -1,13 +1,11 @@
 package capituloVII;
 
 import java.util.Arrays;
-import java.util.Random;
 import java.util.Scanner;
 
 public class PassagensAereas {
     private static final int CAPACIDADE_DE_ASSENTOS = 10;
     private static boolean[] assentos = new boolean[CAPACIDADE_DE_ASSENTOS + 1];
-    private static final Random random = new Random();
     private static final Scanner scanner = new Scanner(System.in);
     private static int classeEscolhida;
 
