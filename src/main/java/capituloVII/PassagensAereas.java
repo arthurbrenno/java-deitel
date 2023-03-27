@@ -29,7 +29,10 @@ public class PassagensAereas {
         }
         else {
             System.out.println("As poltronas dessa classe estão cheias, deseja mudar para outra?");
-            System.out.print(">> ");
+            System.out.print("(s/n)>> ");
+            if (scanner.next().equalsIgnoreCase("s")) {
+                classeEscolhida ^= 3;
+            }
         }
 
     }
