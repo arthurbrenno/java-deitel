@@ -33,6 +33,9 @@ public class PassagensAereas {
             if (scanner.next().equalsIgnoreCase("s")) {
                 classeEscolhida ^= 3;
             }
+            else {
+                System.out.println("Next flight leaves in 3 hours.");
+            }
         }
 
     }
