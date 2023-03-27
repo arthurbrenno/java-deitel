@@ -16,8 +16,10 @@ public class Craps {
    private final static int YO_LEVEN = 11;
    private final static int BOX_CARS = 12;
    private double bankBalance = 1_000;
+   public int rollCount = 0;
+   public int lostCount = 0;
    // enumeração com constantes que representam o status do jogo
-   private enum Status {
+   public enum Status {
       CONTINUE, WON, LOST
    };
 
@@ -82,7 +84,6 @@ public class Craps {
    public Status play() {
       int myPoint = 0; // pontos se não ganhar ou perder na 1a. rolagem
       Status gameStatus; // pode conter CONTINUE, WON ou LOST
-
       int sumOfDice = rollDice(); // primeira rolagem dos dados
 
       // determina o status do jogo e a pontuação com base no primeiro lançamento
@@ -90,36 +91,43 @@ public class Craps {
          case SEVEN: // ganha com 7 no primeiro lançamento
          case YO_LEVEN: // ganha com 11 no primeiro lançamento
             gameStatus = Status.WON;
+            rollCount++;
             break;
          case SNAKE_EYES: // perde com 2 no primeiro lançamento
          case TREY: // perde com 3 no primeiro lançamento
          case BOX_CARS: // perde com 12 no primeiro lançamento
             gameStatus = Status.LOST;
+            lostCount++;
             break;
          default: // não ganhou nem perdeu, portanto registra a pontuação
             gameStatus = Status.CONTINUE; // jogo não terminou
             myPoint = sumOfDice; // informa a pontuação
-            System.out.printf("Point is %d\n", myPoint);
+            //System.out.printf("Point is %d\n", myPoint);
             break; // opcional no final do switch
       } // switch final
 
       // enquanto o jogo não estiver completo
       while (gameStatus == Status.CONTINUE) // nem WON nem LOST
       {
+         
          sumOfDice = rollDice(); // lança os dados novamente
 
          // determina o status do jogo
-         if (sumOfDice == myPoint) // vitória por pontuação
+         if (sumOfDice == myPoint) {// vitória por pontuação
             gameStatus = Status.WON;
-         else if (sumOfDice == SEVEN) // perde obtendo 7 antes de atingir a pontuação
+            rollCount++;
+         }
+         else if (sumOfDice == SEVEN) {// perde obtendo 7 antes de atingir a pontuação
             gameStatus = Status.LOST;
+            lostCount++;
+         }
       } // fim do while
 
       // exibe uma mensagem ganhou ou perdeu
-      if (gameStatus == Status.WON)
-         System.out.println("Player wins");
-      else
-         System.out.println("Player loses");
+      //if (gameStatus == Status.WON)
+         //System.out.println("Player wins");
+      //else
+         //System.out.println("Player loses");
 
       return gameStatus;
    } // fim do método play
@@ -133,8 +141,8 @@ public class Craps {
       int sum = die1 + die2; // soma dos valores dos dados
 
       // exibe os resultados desse lançamento
-      System.out.printf("Player rolled %d + %d = %d\n",
-            die1, die2, sum);
+      //System.out.printf("Player rolled %d + %d = %d\n",
+            //die1, die2, sum);
 
       return sum; // retorna a soma dos dados
    } // fim do método rollDice
