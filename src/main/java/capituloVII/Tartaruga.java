@@ -10,13 +10,11 @@ public class Tartaruga {
     private static int comando;
     private static final int EIXO_X = 10;
     private static final int EIXO_Y = 10;
-    private static int angulo = 90;
+    private static int anguloAtual = 0;
     private static String[][] floor = new String[EIXO_X][EIXO_Y];
 
     public static void main(String[] args) {
         zerarMatriz();
-        placeTartaruga(0, 0);
-        mostrarFloor();
         placeTartaruga(1, 1);
         mostrarFloor();
     }
