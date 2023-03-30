@@ -13,7 +13,7 @@ public class SetePontoDezoito {
     private static Craps craps = new Craps();
     private static int NUMERO_DE_RODADAS = 1_000_000;
 
-
+    //este, e apenas este, está incompleto
     public static void main(String[] args) {
         for (int i = 0; i < NUMERO_DE_RODADAS; i++) {
             craps.play();

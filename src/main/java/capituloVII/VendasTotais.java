@@ -28,7 +28,7 @@ public class VendasTotais {
 
     private static void displayTableFormat() {
         for (int vendorIndex = 0; vendorIndex < sales.length; vendorIndex++) {
-            System.out.printf("%3sVendor %2d", " ", vendorIndex + 1);
+            System.out.printf("%12sVendor %2d", " ", vendorIndex + 1);
         }
         System.out.println();
         for (int i = 0; i < products; i++) {
