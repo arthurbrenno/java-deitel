@@ -6,11 +6,10 @@ public class Tartaruga {
     private static final Scanner scanner = new Scanner(System.in);
     //move-se livremente.
     private static boolean canetaParaCima = true;
-    private static boolean direita = true;
-    private static int comando;
+    private static int comandoUsuario;
     private static final int EIXO_X = 10;
     private static final int EIXO_Y = 10;
-    private static int anguloAtual = 0;
+    private static int rotacaoDaMatrizEmGraus = 0;
     private static String[][] floor = new String[EIXO_X][EIXO_Y];
 
     public static void main(String[] args) {
@@ -49,6 +48,10 @@ public class Tartaruga {
             }
         } 
         floor[i][j] = "T";
+    }
+
+    public static void transporMatriz() {
+
     }
 
 }
